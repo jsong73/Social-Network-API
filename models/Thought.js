@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
-const networkDB = new mongoose.Schema({
+// const networkDB = new mongoose.Schema({
 
 
-})
+// })
 
-module.exports = Thought;
+// module.exports = Thought;

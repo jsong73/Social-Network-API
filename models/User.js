@@ -1,7 +1,11 @@
-const mongoose = require("mongoose");
-import { isEmail } from "validator";
+const {Schema, model} = require("mongoose");
 
-const userSchema = new mongoose.Schema(
+const validateEmail = function(email){
+    const re =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    return re.test(email)
+}
+
+const userSchema = new Schema(
     {
     username: {
         type: String, 
@@ -14,17 +18,17 @@ const userSchema = new mongoose.Schema(
         required: true, 
         unique: true, 
         trim: true, 
-        validate: [isEmail, "invalid email"]
+        validate: [validateEmail, "Please fill a valid email address"]
     },
     thoughts: [
         { 
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: "Thought",
         },
     ],
     friends: [
         {
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: "User",
         }
     ],
