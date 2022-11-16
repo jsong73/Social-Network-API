@@ -1,4 +1,4 @@
-const {Schema, model} = require("mongoose");
+const {Schema, model } = require("mongoose");
 
 const validateEmail = function(email){
     const re =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
