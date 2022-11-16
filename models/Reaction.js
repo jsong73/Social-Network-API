@@ -6,6 +6,7 @@ const reactionSchema = new Schema(
             type: Schema.Types.ObjectId,
             default: () => new Types.ObjectId(),
             ref: "Thought",
+            // do i put this ref here? since this is child
         },
         reactionBody:{
             type: String,

@@ -18,6 +18,7 @@ const thoughtSchema = new Schema(
         },
         reactions:{
             children: [reactionSchema],
+            //putting an array of subdocuments??
         },
     },
     {
