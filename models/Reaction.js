@@ -1,9 +1,9 @@
-// const mongoose = require("mongoose");
+const { Schema } = require("mongoose")
 
-// const networkDB = new mongoose.Schema({
+const networkDB = new mongoose.Schema({
 
 
-// })
+})
 
-// module.exports = Reaction;
+module.exports = Reaction;
 
