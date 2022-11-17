@@ -11,7 +11,7 @@ const userSchema = new Schema(
         type: String, 
         required: true, 
         unique: true, 
-        trim: true
+        trim: true,
     },
     email: {
         type: String, 
@@ -30,11 +30,19 @@ const userSchema = new Schema(
         {
             type: Schema.Types.ObjectId,
             ref: "User",
-        }
+        },
     ],
-});
+    },
+    {
+        toJSON: {
+            // used for formatting and combining fields and de-composing a single value into multiple values before storing it in the collection.
+            virtuals: true,
+        },
+        id: false,
+    }
+);
 
-const User = model("user", userSchema)
+const User = model("User", userSchema)
 
 
 module.exports = User;

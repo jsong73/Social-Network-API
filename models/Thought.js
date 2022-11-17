@@ -1,4 +1,5 @@
 const {Schema, model} = requrie("mongoose");
+const reactionSchema = require("./Reaction")
 
 const thoughtSchema = new Schema(
     {
@@ -16,18 +17,16 @@ const thoughtSchema = new Schema(
             type: String,
             required: true,
         },
-        reactions:{
-            children: [reactionSchema],
-            //putting an array of subdocuments??
+        reactions: [reactionSchema]
         },
-    },
     {
         toJSON: {
             getters: true,
         },
+        id: false
     }
 );
 
-const Thought = model("thought", thoughtSchema)
+const Thought = model("Thought", thoughtSchema)
 
 module.exports = Thought;
